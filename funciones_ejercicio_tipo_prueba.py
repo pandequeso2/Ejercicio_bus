@@ -9,10 +9,9 @@ valor_descuento = 0
 def opcion1():
     print('Asientos disponibles: ')
     bus=[['O' for f in range(4)] for c in range(6)]
-    print(bus)
-    fila=int(input('Ingresa la fila donde quieras estar(1,2,3,4): '))
-    columna:int(input('Ingresa una columna donde quieras estar(1,2,3,4,5,6)'))
-    #if fila
+    for f in bus:
+        print(bus)
+    
     
          
 def opc2():
@@ -22,18 +21,18 @@ def opc2():
     edad=int(input('Ingrese su edad: '))
     valor_de_descuento=descuentos(edad)
     telefono=int(input('Ingrese su numero telefonico(sin el +56): '))
-    pasajero= [nombre,edad,telefono]
+    pasajero= [nombre,edad,telefono,valor_de_descuento]
     pasajeros.append(pasajero)
     time.sleep(1)
     print('Cliente añadido con exito....')
-def opc3(p_valor_de_descuento):
+def opc3():
     print('Mostrar las ventas realizadas: ')
     if len(pasajeros)==0:
         print('No llevas ninguna venta realizada, Ve a la opcion numero 2 primero..')
     else:
         for p in pasajeros:
             os.system('cls')
-            print(f'Nombre: {p[0]}\n Edad: {p[1]}\nNúmero de telefóno: {p[2]}\nValor pagado es: ${descuentos(p_valor_de_descuento)}') 
+            print(f'Nombre: {p[0]}\n Edad: {p[1]}\nNúmero de telefóno: {p[2]}\nValor pagado es: ${p[3]}') 
             print('Ingresa una tecla para continuar...')
             msvcrt.getch()
 def opc4():
